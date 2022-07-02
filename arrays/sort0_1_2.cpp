@@ -19,3 +19,30 @@ sample output
 
 
 */
+//---------------- O(n) approach ----------
+#include <bits/stdc++.h> 
+void swap(int &a,int &b){
+    int temp  = a;
+    a = b;
+    b = temp;
+}
+void sort012(int *arr, int n)
+{
+    int lo = 0;
+    int mid  = 0;
+    int hi = n-1;
+    while(mid<=hi){
+        if(arr[mid]==0){
+            swap(arr[lo],arr[mid]);
+            lo++;
+            mid++;
+        }
+        else if(arr[mid]==1){
+            mid++;
+        }
+        else{
+            swap(arr[mid],arr[hi]);
+            hi--;
+        }
+    }
+}
